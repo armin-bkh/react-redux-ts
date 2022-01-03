@@ -1,24 +1,6 @@
+import { bankAction, bankType, caseTypes } from "./BankReducer.type";
 import { BANKRUPT, DEPOSITE, WITHDRAW } from "./BankTypes";
 
-interface bankType {
-  value: number;
-}
-
-interface bankDepositeAction {
-  type: "DEPOSITE";
-  payload: number;
-}
-
-interface bankWithdrawAction {
-  type: "WITHDRAW";
-  payload: number;
-}
-
-interface bankBankruptAction {
-  type: "BANKRUPT";
-}
-
-type bankAction = bankBankruptAction | bankDepositeAction | bankWithdrawAction;
 
 const bankInitialState: bankType = { value: 0 };
 
@@ -27,11 +9,11 @@ const bankReducer = (
   action: bankAction
 ) => {
   switch (action.type) {
-    case "DEPOSITE":
+    case caseTypes.DEPOSITE:
       return { value: state.value + action.payload};
-    case "WITHDRAW":
+    case caseTypes.WITHDRAW:
       return {value: state.value + action.payload};
-    case "BANKRUPT":
+    case caseTypes.BANKRUPT:
       return 0;
     default:
       return state;
