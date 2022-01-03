@@ -3,9 +3,9 @@ export interface bankType {
 }
 
 export enum caseTypes {
-    DEPOSITE = "DEPOSITE",
-    WITHDRAW = "WITHDRAW",
-    BANKRUPT = "BANKRUPT",
+  DEPOSITE = "DEPOSITE",
+  WITHDRAW = "WITHDRAW",
+  BANKRUPT = "BANKRUPT",
 }
 
 export interface bankDepositeAction {

@@ -1,27 +1,24 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-import {
-  bankruptBank,
-  depositeBank,
-  withdrawBank,
-} from "./Features/Bank/BankActions";
-import { bankType } from "./Features/Bank/BankReducer.type";
+import { bindActionCreators } from 'redux';
+import { actionCreators } from "./Features";
 import { RootStateType } from "./Features/root";
 
 function App() {
   const { value } = useSelector((state: RootStateType) => state.bank);
   const dispatch = useDispatch();
+  const { depositeAction, withdrawAciton, bankruptAction } = bindActionCreators(actionCreators, dispatch);
+
   const depositehandler = () => {
-    dispatch(depositeBank(1000));
+    depositeAction(1000);
   };
 
   const withdrawhandler = () => {
-    dispatch(withdrawBank(500));
+    withdrawAciton(500);
   };
 
   const bankrupthandler = () => {
-    dispatch(bankruptBank());
+    bankruptAction();
   };
 
   return (

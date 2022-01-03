@@ -1,6 +1,3 @@
-import { createStore } from 'redux'
-import rootReducer from './root';
-
-const store = createStore(rootReducer);
-
-export default store;
+export * as actionCreators from './Bank/BankActions';
+export * from './Bank/BankReducer.type';
+export * from './Bank/BankTypes';

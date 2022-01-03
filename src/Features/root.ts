@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
-import bankReducer from './Bank/BankReducer'
+import { combineReducers } from "redux";
+import bankReducer from "./Bank/BankReducer";
 
 const rootReducer = combineReducers({
-    bank: bankReducer,
-})
+  bank: bankReducer,
+});
 
 export default rootReducer;
 

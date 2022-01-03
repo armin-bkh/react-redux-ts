@@ -1,13 +1,24 @@
-import { bankAction, caseTypes } from './BankReducer.type';
+import { Dispatch } from "redux";
+import { bankAction, caseTypes } from "./BankReducer.type";
 
-export const depositeBank = (payload: number) => {
-    return { type: caseTypes.DEPOSITE, payload: payload }
-}
+export const depositeAction = (payload: number) => {
+  return (dispatch: Dispatch<bankAction>) => {
+      console.log(1);
+      dispatch({ type: caseTypes.DEPOSITE, payload });
+  };
+};
 
-export const withdrawBank = (payload: number) => {
-    return { type: caseTypes.WITHDRAW, payload: payload }
-}
+export const withdrawAciton = (payload: number) => {
+  return (dispatch: Dispatch<bankAction>) => {
+      console.log(1);
+      dispatch({ type: caseTypes.WITHDRAW, payload });
+  };
+};
 
-export const bankruptBank = () => {
-    return { type: caseTypes.BANKRUPT }
-}
+export const bankruptAction = () => {
+  return (dispatch: Dispatch<bankAction>) => {
+      console.log(1);
+      
+    dispatch({ type: caseTypes.BANKRUPT });
+  };
+};
