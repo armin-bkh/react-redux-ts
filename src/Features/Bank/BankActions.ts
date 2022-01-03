@@ -1,13 +1,13 @@
 import { bankAction, caseTypes } from './BankReducer.type';
 
-export const depositeHandler = (payload: number) => {
+export const depositeBank = (payload: number) => {
     return { type: caseTypes.DEPOSITE, payload: payload }
 }
 
-export const withdrawHandler = (payload: number) => {
+export const withdrawBank = (payload: number) => {
     return { type: caseTypes.WITHDRAW, payload: payload }
 }
 
-export const bankruptHandler = () => {
-    return { type: caseTypes.DEPOSITE }
+export const bankruptBank = () => {
+    return { type: caseTypes.BANKRUPT }
 }

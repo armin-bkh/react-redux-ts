@@ -12,9 +12,9 @@ const bankReducer = (
     case caseTypes.DEPOSITE:
       return { value: state.value + action.payload};
     case caseTypes.WITHDRAW:
-      return {value: state.value + action.payload};
+      return {value: state.value - action.payload};
     case caseTypes.BANKRUPT:
-      return 0;
+      return {value: 0};
     default:
       return state;
   }
